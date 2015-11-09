@@ -4,6 +4,8 @@ import cheerio from 'cheerio';
 import Promise from 'bluebird';
 import fetch from 'node-fetch';
 
+import Article from './article';
+
 export default class Crawler {
   pttRequest(kanban, pageCount) {
     var requestUrl = `https://www.ptt.cc/bbs/${kanban}/index${pageCount}.html`;
@@ -13,11 +15,16 @@ export default class Crawler {
         var $ = cheerio.load(body);
 
         var pageContents = $('.r-ent').map(function(index, element) {
-          return {
+
+          var article = new Article({
             'title': $(element).find('.title').text().trim(),
             'url': $(element).find('.title a').attr('href'),
             'author': $(element).find('.author').text(),
-          };
+          });
+
+          article.save();
+
+          return article;
         }).toArray();
 
         if( $('.r-list-sep').length > 0 ) {

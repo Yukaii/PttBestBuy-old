@@ -1,5 +1,7 @@
 "use strict";
+
 import Crawler from './crawler';
+import mongoose from 'mongoose';
 
 var mbkanban = new Crawler();
 var articles = mbkanban.parseListFrom("mobilesales");
@@ -10,6 +12,8 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+
+mongoose.connect( 'mongodb://localhost:27017/ptt-best-buy' );
 
 // var routes = require('./routes/index');
 // var users = require('./routes/users');
