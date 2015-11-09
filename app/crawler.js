@@ -18,7 +18,7 @@ export default class Crawler {
 
           var article = new Article({
             'title': $(element).find('.title').text().trim(),
-            'url': $(element).find('.title a').attr('href'),
+            'url': `https://www.ptt.cc${$(element).find('.title a').attr('href')}`,
             'author': $(element).find('.author').text(),
           });
 
