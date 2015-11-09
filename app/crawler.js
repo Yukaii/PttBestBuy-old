@@ -49,7 +49,7 @@ export default class Crawler {
         }).then(function(results) {
           var articles = [].concat.apply([], results);
           // TODOs: save it, hash the url, and parse each page in cron jobs or so
-          // console.log(articles.length);
+          console.log(articles.length);
           return articles;
         });
       }

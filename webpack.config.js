@@ -15,11 +15,12 @@ fs.readdirSync('node_modules')
 
 
 var config = {
-    entry: [path.resolve(__dirname, 'app/index.js')],
+    entry: [path.resolve(__dirname, 'app/app.js')],
     target: 'node',
     output: {
         path: path.resolve(__dirname, 'build'),
-        filename: 'bundle.js'
+        filename: 'app.js',
+        publicPath: '/'
     },
     module: {
       preLoaders: [
