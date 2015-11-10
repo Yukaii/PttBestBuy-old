@@ -1,0 +1,8 @@
+{
+  "name": "PTT Best Buy",
+  "description": "",
+  "repository": "https://github.com/Yukaii/PttBestBuy",
+  "logo": "http://node-js-sample.herokuapp.com/node.svg",
+  "keywords": ["node", "express"],
+  "image": "heroku/nodejs"
+}

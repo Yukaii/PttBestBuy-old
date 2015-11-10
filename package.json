@@ -2,7 +2,7 @@
   "name": "ptt-best-buy",
   "version": "1.0.0",
   "description": "Help you find the best price product on PTT",
-  "main": "index.js",
+  "main": "./build/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./build/app.js",
@@ -40,5 +40,12 @@
     "react-hot-loader": "^1.3.0",
     "webpack": "^1.12.2",
     "webpack-dev-server": "^1.12.1"
+  },
+  "engines": {
+    "node": "4.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Yukaii/PttBestBuy"
   }
 }

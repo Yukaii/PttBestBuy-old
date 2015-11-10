@@ -12,7 +12,7 @@ import paginate from 'express-paginate';
 import schedule from 'node-schedule';
 
 var app = express();
-mongoose.connect( 'mongodb://localhost:27017/ptt-best-buy' );
+mongoose.connect( process.env.MONGOLAB_URI || 'mongodb://localhost/ptt-best-buy' );
 
 schedule.scheduleJob('*/2 * * * *', () => {
   var mbkanban = new Crawler();
@@ -69,6 +69,6 @@ app.use(function(err, req, res, next) {
   });
 });
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
 
 module.exports = app;

@@ -71,7 +71,7 @@ export default class Crawler {
           console.log(`parse total ${articles.length} articles at ${new Date().toLocaleString()}`);
 
           Promise.each(articles, (article) => {
-            if (article.url === undefined || article === undefined) return true;
+            if (article === undefined || article.url === undefined ) return true;
             return fetch(article.url)
               .then( res => res.text() ).then( body => {
                 var $ = cheerio.load(body);
