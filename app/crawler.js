@@ -55,8 +55,8 @@ export default class Crawler {
           return this.pttRequest(kanban, pageCount);
         }).then(function(results) {
           var articles = [].concat.apply([], results);
-          // TODOs: save it, hash the url, and parse each page in cron jobs or so
-          console.log(articles.length);
+          // console.log(articles.length);
+          console.log(`parse total ${articles.length} articles at ${new Date().toLocaleString()}`);
           return articles;
         });
       }

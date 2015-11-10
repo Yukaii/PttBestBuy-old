@@ -9,11 +9,14 @@ import logger from 'morgan';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
 import paginate from 'express-paginate';
+import schedule from 'node-schedule';
 
 var app = express();
 
-// var mbkanban = new Crawler();
-// var articles = mbkanban.parseListFrom("mobilesales");
+schedule.scheduleJob('/40 * * * * *', () => {
+  var mbkanban = new Crawler();
+  mbkanban.parseListFrom("mobilesales");
+});
 
 app.use(paginate.middleware(50, 100));
 
