@@ -12,15 +12,14 @@ import paginate from 'express-paginate';
 import schedule from 'node-schedule';
 
 var app = express();
+mongoose.connect( 'mongodb://localhost:27017/ptt-best-buy' );
 
-schedule.scheduleJob('/40 * * * * *', () => {
+schedule.scheduleJob('*/2 * * * *', () => {
   var mbkanban = new Crawler();
   mbkanban.parseListFrom("mobilesales");
 });
 
 app.use(paginate.middleware(50, 100));
-
-mongoose.connect( 'mongodb://localhost:27017/ptt-best-buy' );
 
 var articlesRouter = require('./routes/articles');
 app.use('/articles', articlesRouter);
