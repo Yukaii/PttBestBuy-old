@@ -4,7 +4,7 @@ import cheerio from 'cheerio';
 import Promise from 'bluebird';
 import fetch from 'node-fetch';
 
-import Article from './article';
+import Article from './models/article';
 
 export default class Crawler {
   pttRequest(kanban, pageCount) {
