@@ -10,8 +10,8 @@ PTT Best Buy
 
 ### TODOs
 
+* <del>價格解析（各種狀況，先最簡單通用版）</del>
 * 文章標題搜尋 API
-* 價格解析（各種狀況，先最簡單通用版）
 * 價格搜尋 API
 * Chrome Extension 客戶端
 

@@ -80,6 +80,11 @@ export default class Crawler {
                 article.raw_html = $('#main-content').html();
                 article.content = $('#main-content').text();
 
+                var priceMatch = /欲售價格[^\d]+?([\d\,]+)/.exec(article.content)
+                if (priceMatch != null && priceMatch.length > 1) {
+                  article.price = parseInt(priceMatch[1]);
+                }
+
                 article.save();
                 return article;
               }
